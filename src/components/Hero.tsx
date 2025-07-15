@@ -11,17 +11,23 @@ const Hero = () => {
       
       {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 text-accent text-6xl float-animation">
+        <div className="absolute top-20 left-10 text-fun-yellow text-6xl bounce-animation">
           <Star className="w-16 h-16" />
         </div>
-        <div className="absolute top-32 right-20 text-fun-purple text-5xl float-animation-delayed">
+        <div className="absolute top-32 right-20 text-fun-pink text-5xl wiggle-animation">
           <Heart className="w-12 h-12" />
         </div>
         <div className="absolute bottom-32 left-20 text-fun-orange text-4xl float-animation">
           <Sparkles className="w-10 h-10" />
         </div>
-        <div className="absolute bottom-20 right-32 text-success text-5xl float-animation-delayed">
+        <div className="absolute bottom-20 right-32 text-fun-lime text-5xl bounce-animation">
           <Star className="w-14 h-14" />
+        </div>
+        <div className="absolute top-40 left-1/2 text-fun-blue text-4xl float-animation-delayed">
+          <Sparkles className="w-8 h-8" />
+        </div>
+        <div className="absolute bottom-40 right-10 text-fun-red text-3xl wiggle-animation">
+          <Heart className="w-6 h-6" />
         </div>
       </div>
 
@@ -31,7 +37,7 @@ const Hero = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl lg:text-7xl font-display font-bold text-white mb-6 leading-tight">
               Welcome to{" "}
-              <span className="bg-gradient-to-r from-fun-yellow via-white to-fun-orange bg-clip-text text-transparent block font-extrabold mt-2">
+              <span className="rainbow-text block font-extrabold mt-2 wiggle-animation">
                 Crystal Play School
               </span>
             </h1>
@@ -45,25 +51,25 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="glass-button text-lg px-8 py-6 rounded-2xl font-semibold text-white border-white/40 hover:bg-white/20 hover:text-white hover:border-white/60 transition-all"
+                className="glass-button text-lg px-8 py-6 rounded-2xl font-semibold text-white border-white/40 hover:bg-white/20 hover:text-white hover:border-white/60 transition-all bounce-animation"
                 onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                📸 View Gallery
+                📸 View Gallery 🎨
               </Button>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 mt-12">
-              <div className="glass-card rounded-2xl p-6 text-center">
-                <div className="text-3xl font-bold text-white mb-2">5+</div>
+              <div className="cartoon-card p-6 text-center border-fun-yellow hover:border-fun-orange">
+                <div className="text-3xl font-bold text-fun-yellow mb-2">5+ 🏆</div>
                 <div className="text-white/80 text-sm">Years Experience</div>
               </div>
-              <div className="glass-card rounded-2xl p-6 text-center">
-                <div className="text-3xl font-bold text-white mb-2">200+</div>
+              <div className="cartoon-card p-6 text-center border-fun-pink hover:border-fun-red">
+                <div className="text-3xl font-bold text-fun-pink mb-2">200+ 😊</div>
                 <div className="text-white/80 text-sm">Happy Kids</div>
               </div>
-              <div className="glass-card rounded-2xl p-6 text-center">
-                <div className="text-3xl font-bold text-white mb-2">15+</div>
+              <div className="cartoon-card p-6 text-center border-fun-lime hover:border-fun-green">
+                <div className="text-3xl font-bold text-fun-lime mb-2">15+ 👨‍🏫</div>
                 <div className="text-white/80 text-sm">Expert Teachers</div>
               </div>
             </div>
@@ -80,10 +86,10 @@ const Hero = () => {
             </div>
             
             {/* Floating Badge */}
-            <div className="absolute -top-6 -right-6 glass-card rounded-2xl p-4 float-animation">
+            <div className="absolute -top-6 -right-6 cartoon-card p-4 bounce-animation border-fun-yellow">
               <div className="text-center">
                 <div className="text-2xl mb-1">⭐</div>
-                <div className="text-sm font-semibold text-primary">Best in City</div>
+                <div className="text-sm font-semibold text-fun-yellow">Best in City! 🎉</div>
               </div>
             </div>
           </div>

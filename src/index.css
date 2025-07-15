@@ -8,37 +8,41 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Playful Color Palette for Kids */
-    --background: 220 40% 98%;
-    --foreground: 225 15% 25%;
+    /* Cartoon-Style Color Palette for Kids */
+    --background: 195 100% 97%;
+    --foreground: 220 25% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 225 15% 25%;
+    --card-foreground: 220 25% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 225 15% 25%;
+    --popover-foreground: 220 25% 20%;
 
-    /* Bright Primary - Vibrant Blue */
-    --primary: 210 100% 56%;
+    /* Bright Primary - Cartoon Blue */
+    --primary: 200 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 210 100% 70%;
+    --primary-glow: 200 100% 70%;
 
-    /* Playful Secondary - Soft Pink */
-    --secondary: 330 85% 85%;
-    --secondary-foreground: 330 45% 25%;
+    /* Playful Secondary - Cartoon Pink */
+    --secondary: 320 100% 75%;
+    --secondary-foreground: 0 0% 100%;
 
-    /* Fun Accent - Sunny Yellow */
-    --accent: 45 100% 65%;
-    --accent-foreground: 45 80% 15%;
+    /* Fun Accent - Cartoon Yellow */
+    --accent: 45 100% 55%;
+    --accent-foreground: 220 25% 20%;
 
-    /* Additional Playful Colors */
-    --success: 145 70% 55%;
+    /* Additional Cartoon Colors */
+    --success: 130 100% 45%;
     --success-foreground: 0 0% 100%;
     
-    --fun-purple: 270 85% 70%;
-    --fun-green: 155 75% 60%;
-    --fun-orange: 25 95% 65%;
-    --fun-yellow: 50 100% 70%;
+    --fun-purple: 280 100% 65%;
+    --fun-green: 140 100% 45%;
+    --fun-orange: 20 100% 55%;
+    --fun-yellow: 50 100% 55%;
+    --fun-red: 0 100% 60%;
+    --fun-blue: 200 100% 50%;
+    --fun-pink: 320 100% 75%;
+    --fun-lime: 80 100% 50%;
 
     --muted: 220 25% 92%;
     --muted-foreground: 225 15% 45%;
@@ -50,20 +54,24 @@ All colors MUST be HSL.
     --input: 220 20% 88%;
     --ring: 210 100% 56%;
 
-    /* Gradients for Crystal Effects */
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 56%), hsl(270 85% 70%));
-    --gradient-secondary: linear-gradient(135deg, hsl(330 85% 85%), hsl(45 100% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(210 100% 56%) 0%, hsl(270 85% 70%) 50%, hsl(330 85% 85%) 100%);
-    --gradient-card: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.6) 100%);
+    /* Cartoon-Style Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(200 100% 50%), hsl(280 100% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(320 100% 75%), hsl(45 100% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(200 100% 50%) 0%, hsl(280 100% 65%) 30%, hsl(320 100% 75%) 70%, hsl(45 100% 55%) 100%);
+    --gradient-card: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 100%);
+    --gradient-fun: linear-gradient(45deg, hsl(0 100% 60%), hsl(45 100% 55%), hsl(80 100% 50%), hsl(140 100% 45%), hsl(200 100% 50%), hsl(280 100% 65%));
+    --gradient-rainbow: linear-gradient(90deg, hsl(0 100% 60%), hsl(20 100% 55%), hsl(45 100% 55%), hsl(80 100% 50%), hsl(140 100% 45%), hsl(200 100% 50%), hsl(280 100% 65%), hsl(320 100% 75%));
 
-    /* Glass Effects */
-    --glass-primary: rgba(255, 255, 255, 0.25);
-    --glass-secondary: rgba(255, 255, 255, 0.15);
-    --glass-border: rgba(255, 255, 255, 0.3);
+    /* Cartoon Glass Effects */
+    --glass-primary: rgba(255, 255, 255, 0.4);
+    --glass-secondary: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-colorful: rgba(255, 255, 255, 0.2);
 
-    /* Shadows for 3D Effects */
-    --shadow-crystal: 0 8px 32px rgba(31, 38, 135, 0.2);
-    --shadow-glow: 0 0 20px rgba(33, 150, 243, 0.3);
+    /* Cartoon Shadows */
+    --shadow-cartoon: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --shadow-colorful: 0 8px 30px rgba(255, 150, 150, 0.3);
+    --shadow-bounce: 0 15px 35px rgba(0, 0, 0, 0.1);
     --shadow-float: 0 10px 30px rgba(0, 0, 0, 0.1);
 
     --radius: 1rem;
@@ -135,30 +143,32 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Glass Morphism Cards */
+  /* Cartoon Glass Morphism Cards */
   .glass-card {
     background: var(--glass-primary);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--shadow-crystal);
+    border: 2px solid var(--glass-border);
+    box-shadow: var(--shadow-cartoon);
+    border-radius: 20px;
   }
 
   .glass-button {
     background: var(--glass-secondary);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border: 1px solid var(--glass-border);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid var(--glass-border);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border-radius: 16px;
   }
 
   .glass-button:hover {
     background: var(--glass-primary);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-glow);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: var(--shadow-bounce);
   }
 
-  /* Floating Animation */
+  /* Cartoon Animations */
   .float-animation {
     animation: float 6s ease-in-out infinite;
   }
@@ -168,17 +178,60 @@ All colors MUST be HSL.
     animation-delay: 3s;
   }
 
+  .bounce-animation {
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  .wiggle-animation {
+    animation: wiggle 1s ease-in-out infinite;
+  }
+
+  .rainbow-animation {
+    animation: rainbow 3s ease-in-out infinite;
+  }
+
   /* Pulse Glow Effect */
   .pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
   }
 
-  /* Gradient Text */
+  /* Gradient Text Effects */
   .gradient-text {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .rainbow-text {
+    background: var(--gradient-rainbow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rainbow-slide 3s ease-in-out infinite;
+  }
+
+  .fun-text {
+    background: var(--gradient-fun);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Cartoon Card Styles */
+  .cartoon-card {
+    background: var(--glass-primary);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 3px solid var(--glass-border);
+    box-shadow: var(--shadow-cartoon);
+    border-radius: 25px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .cartoon-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-bounce);
   }
 }
 
@@ -200,15 +253,42 @@ All colors MUST be HSL.
     background: var(--gradient-card);
   }
 
-  /* Custom Colors */
+  .bg-gradient-fun {
+    background: var(--gradient-fun);
+  }
+
+  .bg-gradient-rainbow {
+    background: var(--gradient-rainbow);
+  }
+
+  /* Cartoon Colors */
   .text-fun-purple { color: hsl(var(--fun-purple)); }
   .text-fun-green { color: hsl(var(--fun-green)); }
   .text-fun-orange { color: hsl(var(--fun-orange)); }
   .text-fun-yellow { color: hsl(var(--fun-yellow)); }
+  .text-fun-red { color: hsl(var(--fun-red)); }
+  .text-fun-blue { color: hsl(var(--fun-blue)); }
+  .text-fun-pink { color: hsl(var(--fun-pink)); }
+  .text-fun-lime { color: hsl(var(--fun-lime)); }
+  
   .bg-fun-purple { background-color: hsl(var(--fun-purple)); }
   .bg-fun-green { background-color: hsl(var(--fun-green)); }
   .bg-fun-orange { background-color: hsl(var(--fun-orange)); }
   .bg-fun-yellow { background-color: hsl(var(--fun-yellow)); }
+  .bg-fun-red { background-color: hsl(var(--fun-red)); }
+  .bg-fun-blue { background-color: hsl(var(--fun-blue)); }
+  .bg-fun-pink { background-color: hsl(var(--fun-pink)); }
+  .bg-fun-lime { background-color: hsl(var(--fun-lime)); }
+
+  /* Cartoon Borders */
+  .border-fun-purple { border-color: hsl(var(--fun-purple)); }
+  .border-fun-green { border-color: hsl(var(--fun-green)); }
+  .border-fun-orange { border-color: hsl(var(--fun-orange)); }
+  .border-fun-yellow { border-color: hsl(var(--fun-yellow)); }
+  .border-fun-red { border-color: hsl(var(--fun-red)); }
+  .border-fun-blue { border-color: hsl(var(--fun-blue)); }
+  .border-fun-pink { border-color: hsl(var(--fun-pink)); }
+  .border-fun-lime { border-color: hsl(var(--fun-lime)); }
 }
 
 /* Keyframe Animations */
@@ -221,11 +301,53 @@ All colors MUST be HSL.
   }
 }
 
-@keyframes pulse-glow {
+@keyframes bounce {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(33, 150, 243, 0.3);
+    transform: translateY(0px) scale(1);
   }
   50% {
-    box-shadow: 0 0 40px rgba(33, 150, 243, 0.6);
+    transform: translateY(-15px) scale(1.1);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes rainbow-slide {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 150, 150, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 150, 150, 0.6);
   }
 }
