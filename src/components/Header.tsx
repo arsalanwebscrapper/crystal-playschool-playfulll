@@ -15,19 +15,19 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 glass-card backdrop-blur-lg border-b border-white/20">
+    <header className="fixed top-0 w-full z-50 cartoon-card backdrop-blur-lg border-fun-pink hover:border-fun-yellow transition-all duration-300">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-gradient-primary rounded-2xl flex items-center justify-center">
-              <span className="text-white font-bold text-xl">C</span>
+            <div className="w-12 h-12 bg-gradient-fun rounded-2xl flex items-center justify-center bounce-animation shadow-bounce">
+              <span className="text-white font-bold text-xl">🎪</span>
             </div>
             <div>
-              <h1 className="font-display font-bold text-xl gradient-text">
-                Crystal Play School
+              <h1 className="font-display font-bold text-xl rainbow-text wiggle-animation">
+                Crystal Play School 🌈
               </h1>
-              <p className="text-xs text-muted-foreground">Where Learning Meets Fun</p>
+              <p className="text-xs text-fun-purple font-medium">✨ Where Learning Meets Fun! ✨</p>
             </div>
           </div>
 
@@ -37,9 +37,9 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="text-fun-blue hover:text-fun-red transition-colors font-bold text-lg transform hover:scale-110 hover:rotate-2 transition-transform duration-300"
               >
-                {item.name}
+                {item.name} 🎯
               </a>
             ))}
           </nav>

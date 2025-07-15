@@ -89,31 +89,32 @@ const Gallery = () => {
   const displayItems = galleryItems.length > 0 ? galleryItems : defaultGalleryItems;
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-20 px-6 bg-gradient-to-br from-fun-yellow/20 via-fun-green/20 to-fun-purple/20">
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-display font-bold gradient-text mb-6">
-            Our Happy Moments 📸
+          <h2 className="text-4xl lg:text-5xl font-display font-bold rainbow-text mb-6 wiggle-animation">
+            Our Happy Moments 📸✨🎪
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-fun-purple font-semibold max-w-3xl mx-auto">
             Take a peek into our vibrant world! See the joy, learning, and 
-            wonderful memories we create together every day.
+            wonderful memories we create together every day! 🌈🎉
           </p>
         </div>
 
         {/* Gallery Grid */}
         {loading ? (
-          <div className="text-center py-8">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
-            <p className="mt-4 text-muted-foreground">Loading gallery...</p>
+           <div className="text-center py-8">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-4 border-fun-pink mx-auto bounce-animation"></div>
+            <p className="mt-4 text-fun-purple font-semibold">Loading magical moments... ✨</p>
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {displayItems.map((item) => (
+             {displayItems.map((item, index) => (
             <Card 
               key={item.id}
-              className="glass-card border-0 overflow-hidden group hover:scale-105 transition-all duration-300 cursor-pointer"
+              className="cartoon-card border-4 border-fun-pink hover:border-fun-yellow overflow-hidden group hover:scale-110 transition-all duration-300 cursor-pointer bounce-animation"
+              style={{animationDelay: `${index * 0.1}s`}}
             >
               <div className="relative overflow-hidden">
                 <img 
@@ -121,17 +122,20 @@ const Gallery = () => {
                   alt={item.title}
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-rainbow/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 {/* Overlay Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+                  <h3 className="text-lg font-bold mb-2">{item.title} 🎯</h3>
                   <p className="text-sm opacity-90">{item.description}</p>
                 </div>
 
                 {/* Decorative Elements */}
-                <div className="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white text-sm">✨</span>
+                <div className="absolute top-4 right-4 w-10 h-10 bg-fun-yellow/80 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bounce-animation">
+                  <span className="text-white text-lg">✨</span>
+                </div>
+                <div className="absolute top-4 left-4 w-8 h-8 bg-fun-pink/80 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 float-animation">
+                  <span className="text-white text-sm">🌟</span>
                 </div>
               </div>
             </Card>
@@ -146,34 +150,34 @@ const Gallery = () => {
             { number: "50+", label: "Fun Events", emoji: "🎉" },
             { number: "200+", label: "Smiling Faces", emoji: "😊" },
             { number: "100%", label: "Pure Joy", emoji: "💖" }
-          ].map((stat, index) => (
-            <div key={index} className="glass-card rounded-2xl p-6 text-center hover:scale-105 transition-transform">
-              <div className="text-3xl mb-2">{stat.emoji}</div>
-              <div className="text-2xl font-bold text-primary mb-1">{stat.number}</div>
-              <div className="text-muted-foreground text-sm">{stat.label}</div>
+           ].map((stat, index) => (
+            <div key={index} className="cartoon-card border-4 border-fun-blue hover:border-fun-orange p-6 text-center hover:scale-110 transition-transform bounce-animation" style={{animationDelay: `${index * 0.2}s`}}>
+              <div className="text-4xl mb-2 wiggle-animation">{stat.emoji}</div>
+              <div className="text-2xl font-bold text-fun-purple mb-1">{stat.number}</div>
+              <div className="text-foreground font-semibold text-sm">{stat.label}</div>
             </div>
           ))}
         </div>
 
         {/* Call to Action */}
         <div className="text-center">
-          <div className="glass-card rounded-3xl p-8 lg:p-12 max-w-3xl mx-auto">
-            <h3 className="text-3xl font-display font-bold mb-6">
-              Want to See More? 🌟
+          <div className="cartoon-card p-8 lg:p-12 max-w-3xl mx-auto border-4 border-fun-rainbow bg-gradient-rainbow/10 float-animation">
+            <h3 className="text-3xl font-display font-bold mb-6 rainbow-text">
+              Want to See More? 🌟✨🎪
             </h3>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-fun-purple font-semibold mb-8">
               Follow us on social media or schedule a visit to see our amazing 
-              facilities and meet our wonderful teachers in person!
+              facilities and meet our wonderful teachers in person! 🎉👨‍🏫
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-gradient-primary text-white border-0 px-8 py-6 rounded-2xl text-lg font-semibold hover:scale-105 transition-transform">
-                🏫 Schedule a Tour
+              <Button className="bg-gradient-rainbow text-white border-0 px-8 py-6 rounded-2xl text-lg font-bold hover:scale-110 transition-transform bounce-animation">
+                🏫 Schedule a Tour 🎯
               </Button>
               <Button 
                 variant="outline" 
-                className="glass-button px-8 py-6 rounded-2xl text-lg font-semibold"
+                className="glass-button px-8 py-6 rounded-2xl text-lg font-bold border-4 border-fun-green hover:border-fun-orange"
               >
-                📱 Follow Us
+                📱 Follow Us 🌈
               </Button>
             </div>
           </div>

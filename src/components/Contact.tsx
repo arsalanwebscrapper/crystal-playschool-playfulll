@@ -56,47 +56,59 @@ const Contact = () => {
       icon: MapPin,
       title: "Visit Us",
       content: "123 Rainbow Street, Happy Valley, Cityville - 12345",
-      color: "text-primary"
+      color: "text-fun-red",
+      bgColor: "bg-fun-red/10",
+      borderColor: "border-fun-red",
+      emoji: "🏫"
     },
     {
       icon: Phone,
       title: "Call Us",
       content: "+1 (555) 123-PLAY\n+1 (555) 123-7529",
-      color: "text-success"
+      color: "text-fun-green",
+      bgColor: "bg-fun-green/10",
+      borderColor: "border-fun-green",
+      emoji: "📞"
     },
     {
       icon: Mail,
       title: "Email Us",
       content: "hello@crystalplayschool.com\nadmissions@crystalplayschool.com",
-      color: "text-fun-orange"
+      color: "text-fun-orange",
+      bgColor: "bg-fun-orange/10",
+      borderColor: "border-fun-orange",
+      emoji: "✉️"
     },
     {
       icon: Clock,
       title: "School Hours",
       content: "Monday - Friday: 8:00 AM - 5:00 PM\nSaturday: 9:00 AM - 2:00 PM",
-      color: "text-fun-purple"
+      color: "text-fun-purple",
+      bgColor: "bg-fun-purple/10",
+      borderColor: "border-fun-purple",
+      emoji: "⏰"
     }
   ];
 
   return (
-    <section className="py-20 px-6 bg-muted/30">
+    <section className="py-20 px-6 bg-gradient-to-br from-fun-red/20 via-fun-blue/20 to-fun-green/20">
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-display font-bold gradient-text mb-6">
-            Let's Connect! 📞
+          <h2 className="text-4xl lg:text-5xl font-display font-bold rainbow-text mb-6 bounce-animation">
+            Let's Connect! 📞✨🎪
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-fun-purple font-semibold max-w-3xl mx-auto">
             Ready to give your child the best start? We'd love to hear from you! 
-            Reach out to learn more about our programs or schedule a visit.
+            Reach out to learn more about our programs or schedule a visit! 🌟🏫
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           {/* Contact Form */}
-          <Card className="glass-card border-0 p-8">
-            <h3 className="text-2xl font-bold mb-6 text-center">
-              🌟 Get in Touch
+          <Card className="cartoon-card border-4 border-fun-yellow hover:border-fun-pink p-8 float-animation">
+            <h3 className="text-2xl font-bold mb-6 text-center rainbow-text">
+              🌟 Get in Touch 🎯
             </h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -178,9 +190,9 @@ const Contact = () => {
 
               <Button 
                 type="submit"
-                className="w-full bg-gradient-primary text-white border-0 py-6 rounded-2xl text-lg font-semibold hover:scale-105 transition-transform"
+                className="w-full bg-gradient-rainbow text-white border-0 py-6 rounded-2xl text-lg font-bold hover:scale-110 transition-transform bounce-animation"
               >
-                🚀 Send Message
+                🚀 Send Message ✨
               </Button>
             </form>
 
@@ -202,14 +214,15 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-6">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="glass-card border-0 p-6 hover:scale-105 transition-transform">
+              <Card key={index} className={`cartoon-card border-4 ${info.borderColor} hover:border-fun-lime p-6 hover:scale-110 transition-transform bounce-animation`} style={{animationDelay: `${index * 0.2}s`}}>
                 <div className="flex items-start gap-4">
-                  <div className={`p-3 rounded-xl bg-gradient-card ${info.color}`}>
-                    <info.icon className="w-6 h-6" />
+                  <div className={`p-3 rounded-xl ${info.bgColor} ${info.color} wiggle-animation`}>
+                    <div className="text-2xl mb-1">{info.emoji}</div>
+                    <info.icon className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-2">{info.title}</h4>
-                    <div className="text-muted-foreground whitespace-pre-line">
+                    <h4 className={`font-bold text-lg mb-2 ${info.color}`}>{info.title} 🎯</h4>
+                    <div className="text-foreground font-medium whitespace-pre-line">
                       {info.content}
                     </div>
                   </div>
@@ -218,13 +231,13 @@ const Contact = () => {
             ))}
 
             {/* Map Placeholder */}
-            <Card className="glass-card border-0 p-6">
-              <h4 className="font-bold text-lg mb-4 text-center">🗺️ Find Us Here</h4>
-              <div className="bg-gradient-secondary rounded-2xl h-48 flex items-center justify-center">
+            <Card className="cartoon-card border-4 border-fun-blue hover:border-fun-orange p-6 bounce-animation">
+              <h4 className="font-bold text-lg mb-4 text-center text-fun-blue">🗺️ Find Us Here 🎯</h4>
+              <div className="bg-gradient-rainbow rounded-2xl h-48 flex items-center justify-center">
                 <div className="text-center text-white">
-                  <MapPin className="w-12 h-12 mx-auto mb-2" />
-                  <div className="font-semibold">Interactive Map</div>
-                  <div className="text-sm opacity-90">Click to open in Maps</div>
+                  <MapPin className="w-12 h-12 mx-auto mb-2 bounce-animation" />
+                  <div className="font-semibold">Interactive Map ✨</div>
+                  <div className="text-sm opacity-90">Click to open in Maps 🗺️</div>
                 </div>
               </div>
             </Card>
@@ -233,23 +246,23 @@ const Contact = () => {
 
         {/* Call to Action */}
         <div className="text-center">
-          <div className="glass-card rounded-3xl p-8 lg:p-12 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-display font-bold mb-6">
-              Ready for a School Tour? 🏫
+          <div className="cartoon-card p-8 lg:p-12 max-w-4xl mx-auto border-4 border-fun-rainbow bg-gradient-rainbow/10 float-animation">
+            <h3 className="text-3xl font-display font-bold mb-6 rainbow-text">
+              Ready for a School Tour? 🏫✨🎪
             </h3>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-fun-purple font-semibold mb-8">
               The best way to experience Crystal Play School is to visit us! 
-              Schedule a tour and see why parents and children love our community.
+              Schedule a tour and see why parents and children love our community! 🌟👨‍👩‍👧‍👦
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-gradient-primary text-white border-0 px-8 py-6 rounded-2xl text-lg font-semibold hover:scale-105 transition-transform">
-                📅 Book a Tour
+              <Button className="bg-gradient-rainbow text-white border-0 px-8 py-6 rounded-2xl text-lg font-bold hover:scale-110 transition-transform bounce-animation">
+                📅 Book a Tour 🎯
               </Button>
               <Button 
                 variant="outline" 
-                className="glass-button px-8 py-6 rounded-2xl text-lg font-semibold"
+                className="glass-button px-8 py-6 rounded-2xl text-lg font-bold border-4 border-fun-yellow hover:border-fun-pink"
               >
-                💬 Chat with Us
+                💬 Chat with Us 🌈
               </Button>
             </div>
           </div>
