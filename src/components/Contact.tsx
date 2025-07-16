@@ -91,28 +91,28 @@ const Contact = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-fun-red/20 via-fun-blue/20 to-fun-green/20">
-      <div className="container mx-auto">
+    <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-br from-fun-red/20 via-fun-blue/20 to-fun-green/20 w-full overflow-x-hidden">
+      <div className="container mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-display font-bold rainbow-text mb-6 bounce-animation">
+        <div className="text-center mb-8 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold rainbow-text mb-4 sm:mb-6 bounce-animation px-2">
             Let's Connect! 📞✨🎪
           </h2>
-          <p className="text-xl text-fun-purple font-semibold max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-fun-purple font-semibold max-w-3xl mx-auto px-4">
             Ready to give your child the best start? We'd love to hear from you! 
             Reach out to learn more about our programs or schedule a visit! 🌟🏫
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-16">
           {/* Contact Form */}
-          <Card className="cartoon-card border-4 border-fun-yellow hover:border-fun-pink p-8 float-animation">
+          <Card className="cartoon-card border-4 border-fun-yellow hover:border-fun-pink p-4 sm:p-6 lg:p-8 float-animation w-full">
             <h3 className="text-2xl font-bold mb-6 text-center rainbow-text">
               🌟 Get in Touch 🎯
             </h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="name" className="text-sm font-medium mb-2 block">
                     Parent's Name *
@@ -144,7 +144,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="phone" className="text-sm font-medium mb-2 block">
                     Phone Number
@@ -245,8 +245,8 @@ const Contact = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center">
-          <div className="cartoon-card p-8 lg:p-12 max-w-4xl mx-auto border-4 border-fun-rainbow bg-gradient-rainbow/10 float-animation">
+        <div className="text-center px-4">
+          <div className="cartoon-card p-4 sm:p-6 lg:p-8 xl:p-12 max-w-4xl mx-auto border-4 border-fun-rainbow bg-gradient-rainbow/10 float-animation w-full">
             <h3 className="text-3xl font-display font-bold mb-6 rainbow-text">
               Ready for a School Tour? 🏫✨🎪
             </h3>

@@ -9,9 +9,9 @@ import Blog from "@/components/Blog";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full overflow-x-hidden">
       <Header />
-      <main>
+      <main className="w-full">
         <section id="home">
           <Hero />
         </section>
