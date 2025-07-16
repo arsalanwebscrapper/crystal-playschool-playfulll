@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Star, Heart, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
@@ -35,9 +36,9 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left space-y-6">
-            <h1 className="responsive-heading font-display font-bold text-white leading-tight" style="font-size: 9px;">
-              Welcome to hello{" "}
-              <span className="rainbow-text block font-extrabold mt-2 gentle-wiggle" style="font-size: 7px;">
+            <h1 className="responsive-heading font-display font-bold text-white leading-tight">
+              Welcome to{" "}
+              <span className="rainbow-text block font-extrabold mt-2 gentle-wiggle">
                 Crystal Play School
               </span>
             </h1>
