@@ -35,9 +35,9 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left space-y-6">
-            <h1 className="responsive-heading font-display font-bold text-white leading-tight">
+            <h1 className="responsive-heading font-display font-bold text-white leading-tight" style="font-size: 9px;">
               Welcome to{" "}
-              <span className="rainbow-text block font-extrabold mt-2 gentle-wiggle">
+              <span className="rainbow-text block font-extrabold mt-2 gentle-wiggle" style="font-size: 7px;">
                 Crystal Play School
               </span>
             </h1>
@@ -51,7 +51,7 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="glass-button text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 rounded-2xl font-semibold text-white border-white/40 hover:bg-white/20 hover:text-white hover:border-white/60 smooth-hover"
+                className="glass-button text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 rounded-2xl font-semibold text-purple border-white/40 hover:bg-white/20 hover:text-white hover:border-white/60 smooth-hover"
                 onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 📸 View Gallery 🎨
