@@ -36,7 +36,7 @@ const Hero = () => {
           {/* Content */}
           <div className="text-center lg:text-left space-y-6">
             <h1 className="responsive-heading font-display font-bold text-white leading-tight" style="font-size: 9px;">
-              Welcome to{" "}
+              Welcome to hello{" "}
               <span className="rainbow-text block font-extrabold mt-2 gentle-wiggle" style="font-size: 7px;">
                 Crystal Play School
               </span>
