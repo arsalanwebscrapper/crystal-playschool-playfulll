@@ -168,31 +168,45 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-bounce);
   }
 
-  /* Cartoon Animations */
+  /* Premium Smooth Animations */
   .float-animation {
-    animation: float 6s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite;
+    transform-origin: center;
   }
 
   .float-animation-delayed {
-    animation: float 6s ease-in-out infinite;
-    animation-delay: 3s;
+    animation: float 8s ease-in-out infinite;
+    animation-delay: 4s;
+    transform-origin: center;
   }
 
   .bounce-animation {
-    animation: bounce 2s ease-in-out infinite;
+    animation: gentle-bounce 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    transform-origin: center;
   }
 
   .wiggle-animation {
-    animation: wiggle 1s ease-in-out infinite;
+    animation: gentle-wiggle 2s ease-in-out infinite;
+    transform-origin: center;
   }
 
   .rainbow-animation {
-    animation: rainbow 3s ease-in-out infinite;
+    animation: rainbow 4s ease-in-out infinite;
   }
 
-  /* Pulse Glow Effect */
+  /* Premium Pulse Glow Effect */
   .pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
+    animation: premium-glow 3s ease-in-out infinite;
+    box-shadow: 0 0 30px rgba(var(--primary), 0.4);
+  }
+
+  /* Smooth Hover Interactions */
+  .smooth-hover {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .smooth-hover:hover {
+    transform: translateY(-8px) scale(1.03);
   }
 
   /* Gradient Text Effects */
@@ -226,12 +240,29 @@ All colors MUST be HSL.
     border: 3px solid var(--glass-border);
     box-shadow: var(--shadow-cartoon);
     border-radius: 25px;
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cartoon-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .cartoon-card:hover::before {
+    left: 100%;
   }
 
   .cartoon-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: var(--shadow-bounce);
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -291,34 +322,37 @@ All colors MUST be HSL.
   .border-fun-lime { border-color: hsl(var(--fun-lime)); }
 }
 
-/* Keyframe Animations */
+/* Premium Keyframe Animations */
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
   }
-  50% {
-    transform: translateY(-20px);
+  33% {
+    transform: translateY(-15px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(-25px) rotate(-1deg);
   }
 }
 
-@keyframes bounce {
+@keyframes gentle-bounce {
   0%, 100% {
     transform: translateY(0px) scale(1);
   }
   50% {
-    transform: translateY(-15px) scale(1.1);
+    transform: translateY(-8px) scale(1.02);
   }
 }
 
-@keyframes wiggle {
+@keyframes gentle-wiggle {
   0%, 100% {
     transform: rotate(0deg);
   }
   25% {
-    transform: rotate(-5deg);
+    transform: rotate(-2deg);
   }
   75% {
-    transform: rotate(5deg);
+    transform: rotate(2deg);
   }
 }
 
@@ -343,11 +377,26 @@ All colors MUST be HSL.
   }
 }
 
-@keyframes pulse-glow {
+@keyframes premium-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(255, 150, 150, 0.3);
+    box-shadow: 0 0 25px rgba(var(--primary), 0.4), 0 0 50px rgba(var(--primary), 0.1);
+    filter: brightness(1);
   }
   50% {
-    box-shadow: 0 0 40px rgba(255, 150, 150, 0.6);
+    box-shadow: 0 0 35px rgba(var(--primary), 0.6), 0 0 70px rgba(var(--primary), 0.2);
+    filter: brightness(1.1);
+  }
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .responsive-heading {
+    font-size: clamp(2rem, 8vw, 4rem);
+    line-height: 1.2;
+  }
+  
+  .responsive-text {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+    line-height: 1.5;
   }
 }

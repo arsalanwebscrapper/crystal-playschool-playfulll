@@ -88,43 +88,43 @@ const Activities = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-fun-lime/20 via-fun-pink/20 to-fun-blue/20">
-      <div className="container mx-auto">
+    <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-br from-fun-lime/20 via-fun-pink/20 to-fun-blue/20">
+      <div className="container mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-display font-bold rainbow-text mb-6 bounce-animation">
+        <div className="text-center mb-12 lg:mb-16 space-y-4 lg:space-y-6">
+          <h2 className="responsive-heading font-display font-bold rainbow-text gentle-bounce">
             Fun Learning Activities 🎪✨
           </h2>
-          <p className="text-xl text-fun-purple font-semibold max-w-3xl mx-auto">
+          <p className="responsive-text text-fun-purple font-semibold max-w-4xl mx-auto leading-relaxed">
             Every day brings new adventures! Our carefully designed activities 
             help children develop skills while having the time of their lives! 🎉🌟
           </p>
         </div>
 
         {/* Activities Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 lg:mb-16">
           {activities.map((activity, index) => (
             <Card 
               key={index}
-              className={`cartoon-card border-4 ${activity.borderColor} overflow-hidden hover:scale-110 transition-all duration-300 group cursor-pointer bounce-animation`}
-              style={{animationDelay: `${index * 0.1}s`}}
+              className={`cartoon-card border-4 ${activity.borderColor} overflow-hidden smooth-hover group cursor-pointer`}
+              style={{animationDelay: `${index * 0.05}s`}}
             >
               {/* Colorful Header */}
-              <div className={`${activity.color} p-6 text-center text-white relative overflow-hidden wiggle-animation`}>
-                <div className="text-5xl mb-2 transform group-hover:scale-125 transition-transform bounce-animation">
+              <div className={`${activity.color} p-4 sm:p-6 text-center text-white relative overflow-hidden`}>
+                <div className="text-3xl sm:text-4xl lg:text-5xl mb-2 transform group-hover:scale-110 smooth-hover relative z-10">
                   {activity.emoji}
                 </div>
-                <activity.icon className="w-8 h-8 mx-auto opacity-80" />
+                <activity.icon className="w-6 h-6 sm:w-7 lg:w-8 sm:h-7 lg:h-8 mx-auto opacity-80 relative z-10" />
                 
                 {/* Decorative circles */}
-                <div className="absolute -top-4 -right-4 w-16 h-16 bg-white/30 rounded-full float-animation"></div>
-                <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-white/20 rounded-full float-animation-delayed"></div>
+                <div className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-8 h-8 sm:w-12 lg:w-16 sm:h-12 lg:h-16 bg-white/30 rounded-full float-animation"></div>
+                <div className="absolute -bottom-2 sm:-bottom-4 -left-2 sm:-left-4 w-6 h-6 sm:w-8 lg:w-12 sm:h-8 lg:h-12 bg-white/20 rounded-full float-animation-delayed"></div>
               </div>
               
               {/* Content */}
-              <div className="p-6 bg-gradient-card">
-                <h3 className={`text-lg font-bold mb-3 text-center ${activity.textColor}`}>{activity.title} 🎯</h3>
-                <p className="text-foreground font-medium text-sm text-center leading-relaxed">
+              <div className="p-4 sm:p-6 bg-gradient-card">
+                <h3 className={`text-base sm:text-lg font-bold mb-2 sm:mb-3 text-center ${activity.textColor}`}>{activity.title}</h3>
+                <p className="text-foreground font-medium text-xs sm:text-sm text-center leading-relaxed">
                   {activity.description}
                 </p>
               </div>
