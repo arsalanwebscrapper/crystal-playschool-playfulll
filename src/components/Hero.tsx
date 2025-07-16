@@ -36,9 +36,9 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left space-y-6">
-            <h1 className="responsive-heading font-display font-bold text-white leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold text-white leading-tight">
               Welcome to{" "}
-              <span className="rainbow-text block font-extrabold mt-2 gentle-wiggle">
+              <span className="rainbow-text block font-extrabold mt-2 gentle-wiggle text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
                 Crystal Play School
               </span>
             </h1>
